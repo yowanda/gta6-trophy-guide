@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Leonida Ledger — GTA VI Trophy Guide &amp; Tracker</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="masthead">
+  <div class="masthead-text">
+    <p class="kicker">Grand Theft Auto VI &middot; PlayStation 5 &middot; works offline</p>
+    <h1>Leonida Ledger</h1>
+    <p class="sub">Every one of the 55 trophies — official name, description and grade — with a guide in our own words, a checklist that saves in your browser, a roadmap to the platinum and the one trophy you can miss.</p>
+  </div>
+  <div class="progress-card" id="progress-card">
+    <p class="big-number"><span id="earned-count">0</span><span class="of"> / 55</span></p>
+    <p class="progress-label" id="progress-text">0% to the platinum</p>
+    <div class="progress-track"><div class="progress-fill" id="progress-fill"></div></div>
+    <p class="grade-counts" id="grade-counts"></p>
+  </div>
+</header>
+
+<nav class="tabs" aria-label="Sections">
+  <button type="button" id="tab-tracker" class="tab active">Tracker</button>
+  <button type="button" id="tab-roadmap" class="tab">Roadmap to Platinum</button>
+  <button type="button" id="tab-missables" class="tab">Missables <span class="tab-badge">1</span></button>
+</nav>
+
+<section id="view-tracker" class="view">
+  <div class="controls">
+    <label class="search-label">Search <input id="search" type="search" placeholder="Trophy name or mission…" autocomplete="off"></label>
+    <label>Kind
+      <select id="kind">
+        <option value="all">All kinds</option>
+        <option value="story">Story</option>
+        <option value="missable">Missable</option>
+        <option value="collectibles">Collectibles</option>
+        <option value="activities">Activities</option>
+        <option value="crime">Crime &amp; robberies</option>
+        <option value="side">Side quests</option>
+        <option value="exploration">Exploration</option>
+        <option value="completion">100% completion</option>
+        <option value="misc">Miscellaneous</option>
+      </select>
+    </label>
+    <label>Grade
+      <select id="grade">
+        <option value="all">All grades</option>
+        <option value="platinum">Platinum</option>
+        <option value="gold">Gold</option>
+        <option value="silver">Silver</option>
+        <option value="bronze">Bronze</option>
+      </select>
+    </label>
+    <label class="check"><input id="spoiler" type="checkbox"> Hide story spoilers</label>
+    <label class="check"><input id="earned-only" type="checkbox"> Earned only</label>
+    <button id="export" type="button">Export progress</button>
+    <label class="import">Import progress <input id="import" type="file" accept="application/json,.json"></label>
+  </div>
+  <p class="note" id="filter-note"></p>
+  <p class="online-note">All 55 trophies are offline single-player — this game has no online trophies. Spoiler mode hides the names and descriptions of story trophies until you earn them.</p>
+  <ul class="trophy-list" id="list"></ul>
+</section>
+
+<section id="view-roadmap" class="view hidden">
+  <h2>Roadmap to the platinum</h2>
+  <p class="lede">About 200 hours, one playthrough, no online play, no mission replay. PowerPyx rates the platinum 4/10 difficulty. Keep a manual save at the start and end of every chapter — there are 15 save slots and no way to replay a mission.</p>
+  <ol class="stages">
+    <li class="stage">
+      <h3>Stage 1 — Story first <span class="stage-time">60–80 hours</span></h3>
+      <p>Play all five chapters with Jason and Lucia. Take optional missions as their icons appear (purple icons, and black icons with pink letters) — they feed the 100% checklist later. Scan every new vehicle with the WAiNK app and study animals through your binoculars as you travel: the checklist wants 200 of 277 base-model vehicles and 100 of 255 animals, and progress made now already counts.</p>
+      <p class="stage-warning">Do the Chapter 1 balcony meditation before Chapter 1 ends — see Missables. It is the only trophy-related moment that can pass you by.</p>
+      <p>Story trophies earned here: the 12 chapter and mission trophies, from <em>Just Like Paradise</em> to <em>You Gotta Know When to Get Off</em> (gold), plus the platinum's foundation.</p>
+    </li>
+    <li class="stage">
+      <h3>Stage 2 — The 100% Completion checklist <span class="stage-time">about 100 hours</span></h3>
+      <p>After the story, open <strong>Progress &gt; Stats &gt; 100% Completion</strong>. The checklist is closer to 60% true completion: most rows ask for a portion, so skip the rest. Rows that demand everything: all 39 gang operations, 22 bank jobs, 7 payday loan jobs, 8 bank vaults, 33 underwater discoveries, 42 shooting-range gold medals, 42 drone time trials and all 15 of Bret's target decks. Only 70 of the 80 Challenges are needed, so skip the ten hardest. Finish this stage and <em>A Long Road</em> (gold) pops.</p>
+      <table class="checklist-table">
+        <thead><tr><th>Checklist row</th><th>Needed</th></tr></thead>
+        <tbody>
+          <tr><td>Main story</td><td>All chapters</td></tr>
+          <tr><td>Optional tasks</td><td>100</td></tr>
+          <tr><td>Gang operations / Bank jobs / Payday loan jobs</td><td>39 / 22 / 7 (all)</td></tr>
+          <tr><td>Bank vaults</td><td>8 (all)</td></tr>
+          <tr><td>Collectible card sets</td><td>15 of 18</td></tr>
+          <tr><td>WAiNK locations / Underwater discoveries</td><td>100 / 33 (all)</td></tr>
+          <tr><td>Cocaine Flamingos</td><td>100 of 125</td></tr>
+          <tr><td>Meditations</td><td>15 of 18 (all 18 for the trophy)</td></tr>
+          <tr><td>Base-model vehicles / Animals studied</td><td>200 of 277 / 100 of 255</td></tr>
+          <tr><td>Shooting-range golds / Drone time trials</td><td>42 / 42 (all)</td></tr>
+          <tr><td>Stunts / Challenges / Bret's target decks</td><td>300 of 397 / 70 of 80 / 15 (all)</td></tr>
+          <tr><td>Races won</td><td>30 of 40</td></tr>
+        </tbody>
+      </table>
+      <p class="source-line">Checklist numbers: PowerPyx 100% Completion guide; KeenGamer 100% section.</p>
+    </li>
+    <li class="stage">
+      <h3>Stage 3 — Strangers &amp; Freaks and cleanup <span class="stage-time">10–20 hours</span></h3>
+      <p>Finish the eight Strangers &amp; Freaks strands (the five character finales — Andy, Kenton, Billy, Randy, Tyrone — count toward the eight), sweep up the remaining meditation spots, and mop up any combat, driving, robbery and money trophies still open. When the last one pops, <em>Vice Got a Price!</em> follows.</p>
+    </li>
+  </ol>
+</section>
+
+<section id="view-missables" class="view hidden">
+  <h2>Missable trophies</h2>
+  <div class="missable-banner">
+    <p><strong>Only one trophy is potentially missable: Positive Mental Attitude.</strong> Everything else on the list either unlocks through the story or can be done in free roam after the story ends. There is no mission replay, so keep manual saves at the start and end of each chapter as a safety net. Cheats disable trophies and saving while active — keep them off this save.</p>
+  </div>
+  <ul class="trophy-list" id="missable-list"></ul>
+  <h3>Why nothing else can be missed</h3>
+  <p>The 12 story trophies unlock automatically as the chapters and named missions complete. Every collectible, activity, robbery and money trophy is available in free roam after the story, and the game never locks you out of Leonida. Some optional missions expire and a few fences disappear, but PowerPyx and KeenGamer both confirm none of that affects any trophy or the 100% checklist.</p>
+  <p class="source-line">Missable assessment: PowerPyx roadmap (“Potentially 1 – Positive Mental Attitude”); KeenGamer roadmap; Vice City Hustle trophy list.</p>
+</section>
+
+<footer>
+  <h2>Sources</h2>
+  <p>Official trophy names, descriptions and grades: the official PlayStation 5 list as published on <a href="https://www.exophase.com/game/grand-theft-auto-vi-psn/trophies/">Exophase</a> and <a href="https://psnprofiles.com/trophies/43531-grand-theft-auto-vi">PSNProfiles</a> (55 trophies: 1 platinum, 2 gold, 6 silver, 46 bronze; 28 hidden). Guides are written in our own words for this guide; each trophy names its sources beside its guide. Method and roadmap details draw on <a href="https://www.powerpyx.com/gta-6-grand-theft-auto-vI-trophy-guide-roadmap/">PowerPyx</a>, <a href="https://www.keengamer.com/articles/guides/gta-6-trophy-guide-platinum-roadmap-all-55-trophies/">KeenGamer</a>, <a href="https://www.pushsquare.com/guides/gta-6-trophy-guide-and-roadmap">Push Square</a>, <a href="https://gamemapa.com/en/gta-6/guides/gta-6-trophy-achievement-list/">GameMapa</a> and <a href="https://www.vicecityhustle.com/guides/gta-6-trophy-list-all-55-trophies">Vice City Hustle</a>. Where a method is still unconfirmed, the guide says so instead of guessing. No Rockstar Games logo, artwork or game screenshots are used; the look is our own.</p>
+  <p>Progress is stored only in your browser (localStorage) and never leaves your machine. This guide works fully offline from its own files.</p>
+</footer>
+
+<script type="module" src="app.js"></script>
+</body>
+</html>
