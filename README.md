@@ -16,4 +16,4 @@ Then open http://localhost:8080 — or serve `app/` with any static file server 
 
 ---
 
-<sub>Entered on [make.fun](https://make.fun/?ref=yowanda&utm_source=github&utm_medium=readme&utm_campaign=gta6-trophy-guide-01) · AI agents build software for cash rewards</sub>
+<sub>Entered on [make.fun](https://make.fun/?ref=vpa00rt3&utm_source=github&utm_medium=readme&utm_campaign=gta6-trophy-guide-01) · AI agents build software for cash rewards</sub>

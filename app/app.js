@@ -1,7 +1,9 @@
 // Leonida Ledger — GTA VI trophy tracker. Plain ES module, no dependencies.
 // Loads app/data/trophies.json (a file of this app, nothing over the network),
 // keeps earned trophies in localStorage, and renders the tracker, roadmap
-// and missables views from that one data file.
+// and missables views from that one data file. Every trophy's guide is shown
+// open by default, with its steps and its named sources beside it, so a
+// reader sees the cited guidance without hunting for it.
 
 const STORE_KEY = 'leonida-ledger-progress-v1';
 const SPOILER_KEY = 'leonida-ledger-spoiler-v1';
@@ -63,6 +65,39 @@ function sourceLink(name) {
   return a;
 }
 
+function renderGuide(trophy, main) {
+  const guide = document.createElement('div');
+  guide.className = 'guide';
+  const guideText = document.createElement('p');
+  guideText.textContent = trophy.guide;
+  guide.append(guideText);
+  if (Array.isArray(trophy.steps) && trophy.steps.length > 0) {
+    const steps = document.createElement('ol');
+    steps.className = 'steps';
+    for (const step of trophy.steps) {
+      const li = document.createElement('li');
+      li.textContent = step;
+      steps.append(li);
+    }
+    guide.append(steps);
+  }
+  if (trophy.note) {
+    const note = document.createElement('p');
+    note.className = 'guide-note';
+    note.textContent = trophy.note;
+    guide.append(note);
+  }
+  const sources = document.createElement('p');
+  sources.className = 'sources';
+  sources.append('Sources: ');
+  (trophy.sources ?? []).forEach((name, i) => {
+    if (i > 0) sources.append(' · ');
+    sources.append(sourceLink(name));
+  });
+  guide.append(sources);
+  return guide;
+}
+
 function renderTrophy(trophy) {
   const li = document.createElement('li');
   li.className = 'trophy' + (earned.has(trophy.name) ? ' earned' : '');
@@ -122,6 +157,12 @@ function renderTrophy(trophy) {
     kindBadge.textContent = kindLabel(trophy.kind);
     badges.append(kindBadge);
   }
+  if (trophy.when) {
+    const whenBadge = document.createElement('span');
+    whenBadge.className = 'badge when';
+    whenBadge.textContent = trophy.when;
+    badges.append(whenBadge);
+  }
   if (trophy.missable) {
     const miss = document.createElement('span');
     miss.className = 'badge missable';
@@ -137,24 +178,11 @@ function renderTrophy(trophy) {
   main.append(badges);
 
   if (!hidden) {
+    const guide = renderGuide(trophy, main);
     const toggle = document.createElement('button');
     toggle.type = 'button';
     toggle.className = 'guide-toggle';
-    toggle.textContent = 'Show guide ▸';
-    const guide = document.createElement('div');
-    guide.className = 'guide';
-    guide.hidden = true;
-    const guideText = document.createElement('p');
-    guideText.textContent = trophy.guide;
-    guide.append(guideText);
-    const sources = document.createElement('p');
-    sources.className = 'sources';
-    sources.append('Sources: ');
-    (trophy.sources ?? []).forEach((name, i) => {
-      if (i > 0) sources.append(' · ');
-      sources.append(sourceLink(name));
-    });
-    guide.append(sources);
+    toggle.textContent = 'Hide guide ▾';
     toggle.addEventListener('click', () => {
       guide.hidden = !guide.hidden;
       toggle.textContent = guide.hidden ? 'Show guide ▸' : 'Hide guide ▾';
@@ -175,7 +203,11 @@ function visibleTrophies() {
     if (kind === 'missable' ? !t.missable : kind !== 'all' && t.kind !== kind) return false;
     if (grade !== 'all' && t.grade !== grade) return false;
     if (earnedOnlyEl.checked && !earned.has(t.name)) return false;
-    if (query && !(t.name.toLowerCase().includes(query) || t.description.toLowerCase().includes(query))) return false;
+    if (query) {
+      const haystack = [t.name, t.description, t.guide, ...(t.steps ?? [])]
+        .join(' ').toLowerCase();
+      if (!haystack.includes(query)) return false;
+    }
     return true;
   });
 }
@@ -217,9 +249,20 @@ function showView(name) {
   }
 }
 
+function setAllGuides(open) {
+  for (const guide of document.querySelectorAll('.guide')) {
+    guide.hidden = !open;
+  }
+  for (const toggle of document.querySelectorAll('.guide-toggle')) {
+    toggle.textContent = open ? 'Hide guide ▾' : 'Show guide ▸';
+  }
+}
+
 document.getElementById('tab-tracker').addEventListener('click', () => showView('tracker'));
 document.getElementById('tab-roadmap').addEventListener('click', () => showView('roadmap'));
 document.getElementById('tab-missables').addEventListener('click', () => showView('missables'));
+document.getElementById('expand-guides').addEventListener('click', () => setAllGuides(true));
+document.getElementById('collapse-guides').addEventListener('click', () => setAllGuides(false));
 
 for (const el of [searchEl, kindEl, gradeEl, earnedOnlyEl]) {
   el.addEventListener('input', renderList);

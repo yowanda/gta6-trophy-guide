@@ -11,7 +11,7 @@
   <div class="masthead-text">
     <p class="kicker">Grand Theft Auto VI &middot; PlayStation 5 &middot; works offline</p>
     <h1>Leonida Ledger</h1>
-    <p class="sub">Every one of the 55 trophies — official name, description and grade — with a guide in our own words, a checklist that saves in your browser, a roadmap to the platinum and the one trophy you can miss.</p>
+    <p class="sub">Every one of the 55 trophies — official name, description and grade — with a step-by-step guide in our own words that names its sources beside every trophy, a checklist that saves in your browser, a roadmap to the platinum and the one trophy you can miss.</p>
   </div>
   <div class="progress-card" id="progress-card">
     <p class="big-number"><span id="earned-count">0</span><span class="of"> / 55</span></p>
@@ -57,6 +57,8 @@
     <label class="check"><input id="earned-only" type="checkbox"> Earned only</label>
     <button id="export" type="button">Export progress</button>
     <label class="import">Import progress <input id="import" type="file" accept="application/json,.json"></label>
+    <button id="expand-guides" type="button">Expand all guides</button>
+    <button id="collapse-guides" type="button">Collapse all guides</button>
   </div>
   <p class="note" id="filter-note"></p>
   <p class="online-note">All 55 trophies are offline single-player — this game has no online trophies. Spoiler mode hides the names and descriptions of story trophies until you earn them.</p>
@@ -66,6 +68,23 @@
 <section id="view-roadmap" class="view hidden">
   <h2>Roadmap to the platinum</h2>
   <p class="lede">About 200 hours, one playthrough, no online play, no mission replay. PowerPyx rates the platinum 4/10 difficulty. Keep a manual save at the start and end of every chapter — there are 15 save slots and no way to replay a mission.</p>
+  <h3>Story order — which chapter earns which trophy</h3>
+  <p>Every story trophy below is built from the official trophy descriptions (mission and chapter names as PlayStation lists them). The six named-mission trophies have no chapter given in the official list, so they are listed separately — play them whenever the story brings them up.</p>
+  <table class="checklist-table chapter-table">
+    <thead><tr><th>When</th><th>Trophies earned</th><th>Watch out</th></tr></thead>
+    <tbody>
+      <tr><td>Chapter 1</td><td><em>Just Like Paradise</em> (Gone Fishing) · <em>Paradise Lost</em> (chapter complete)</td><td><strong>Do the balcony meditation with Lucia before Chapter 1 ends</strong> — see Missables. It is the only trophy moment that can pass you by.</td></tr>
+      <tr><td>Chapter 2</td><td><em>T**s Ass Drug Money</em> (chapter complete)</td><td>Jason and Lucia become playable together — later meditation spots need both.</td></tr>
+      <tr><td>Chapter 3</td><td><em>Vice City, Baby!</em> (chapter complete)</td><td>Take optional missions as they appear — the checklist wants 100 of them.</td></tr>
+      <tr><td>Chapter 4</td><td><em>Top Of The World, Ma</em> (chapter complete)</td><td>Bank vault robberies open here (mission <em>That's Where The Money Is…</em>) — the checklist wants all 8 vaults.</td></tr>
+      <tr><td>Final mission</td><td><em>You Gotta Know When to Get Off</em> (gold)</td><td>After the credits, free roam opens and the 100% checklist appears under Progress &gt; Stats.</td></tr>
+      <tr><td>Named story missions (any chapter)</td><td><em>Trust</em> (Breakfast Run) · <em>Break the Bank</em> (The Cartel Heist) · <em>Family Matters</em> (Child's Play) · <em>DWNFALL</em> (Headliners) · <em>Hi-Jacked</em> (VCIA Takedown) · <em>Snow Storm</em> (Operation Savage Glory)</td><td>None can be missed — each pops when its mission is completed.</td></tr>
+      <tr><td>After the story</td><td><em>A Long Road</em> (gold, 100% Completion) · then <em>Vice Got a Price!</em> (platinum)</td><td>Stage 2 below is the long grind; Stage 3 is the cleanup.</td></tr>
+    </tbody>
+  </table>
+  <p class="source-line">Chapter order: official trophy descriptions on Exophase and PSNProfiles; stage order and hours: PowerPyx roadmap and KeenGamer roadmap.</p>
+  <h3>Collectibles and counts — what the checklist asks for</h3>
+  <p>The 100% Completion checklist (Stage 2) is where the collectible and activity trophies live. The table in Stage 2 gives every count; the short version: 18 card sets (15 needed), 125 Cocaine Flamingos (100 needed), 18 meditation spots (15 for the checklist, all 18 for the trophy), 277 base-model vehicles (200 needed), 255 animals (100 studied), 397 stunts (300 needed), 80 Challenges (70 needed), 40 races (30 won), 42 shooting-range golds, 42 drone time trials, 15 Bret target decks, 39 gang operations, 22 bank jobs, 7 payday loan jobs, 8 bank vaults, 33 underwater discoveries, 100 WAiNK locations, $250,000 laundered Marked Bills.</p>
   <ol class="stages">
     <li class="stage">
       <h3>Stage 1 — Story first <span class="stage-time">60–80 hours</span></h3>
@@ -107,6 +126,8 @@
   <div class="missable-banner">
     <p><strong>Only one trophy is potentially missable: Positive Mental Attitude.</strong> Everything else on the list either unlocks through the story or can be done in free roam after the story ends. There is no mission replay, so keep manual saves at the start and end of each chapter as a safety net. Cheats disable trophies and saving while active — keep them off this save.</p>
   </div>
+  <h3>Save safety net — your insurance against the one miss</h3>
+  <p>There are 15 save slots and no mission replay, so spend a few of them on insurance. Save manually at the start and end of every chapter, and make a dedicated save in Chapter 1 right after the mission Down to Earth, before you do the balcony meditation — if anything goes wrong, that save is your way back. The 100% checklist only needs 15 of the 18 meditations, so even a missed balcony spot cannot cost you A Long Road; it can only cost you Positive Mental Attitude itself.</p>
   <ul class="trophy-list" id="missable-list"></ul>
   <h3>Why nothing else can be missed</h3>
   <p>The 12 story trophies unlock automatically as the chapters and named missions complete. Every collectible, activity, robbery and money trophy is available in free roam after the story, and the game never locks you out of Leonida. Some optional missions expire and a few fences disappear, but PowerPyx and KeenGamer both confirm none of that affects any trophy or the 100% checklist.</p>
