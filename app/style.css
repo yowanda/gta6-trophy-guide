@@ -162,6 +162,14 @@ a { color: var(--coral); }
   background: var(--coral-soft); border: 1px solid #f3c4b6; border-left: 5px solid var(--coral);
   border-radius: var(--radius); padding: 16px 18px; margin-bottom: 16px;
 }
+.save-safety-panel {
+  background: var(--card); border: 1px solid var(--line); border-left: 5px solid var(--gold);
+  border-radius: var(--radius); padding: 16px 18px; margin: 14px 0 18px;
+}
+.save-safety-panel h3 { margin: 0 0 8px; }
+.save-safety-panel ul { margin: 0; padding-left: 20px; }
+.save-safety-panel li { margin-bottom: 6px; }
+.save-safety-panel li:last-child { margin-bottom: 0; }
 footer { padding: 8px 28px 32px; max-width: 1060px; color: var(--muted); font-size: 13px; }
 footer h2 { font: 700 18px Georgia, serif; color: var(--ink); margin-bottom: 6px; }
 @media (max-width: 640px) {
